@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/discOreo"
     android:background="#F5F5F5">
 
     <ImageView
@@ -13,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitStart"
-        android:src="@drawable/oreaoshake" />
+        android:src="@drawable/iced_latte" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oreo Milk Shake"
+            android:text="Iced Latte"
             android:textColor="@color/black"
             android:textSize="35sp"
             android:fontFamily="sans-serif-medium" />
@@ -63,13 +62,13 @@
             android:layout_weight="1"
             android:text="Customer Reviews"
             android:backgroundTint="#D3D3D3"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Oreo milkshake is a creamy, indulgent beverage made by blending vanilla ice cream, milk, and crushed Oreo cookies. It offers a deliciously sweet and rich flavor, with a perfect balance of smoothness and crunchy cookie bits"
+        android:text="Iced Latte is a cool and creamy coffee drink made with rich espresso, chilled milk, and ice. Smooth and refreshing, it’s a simple yet satisfying choice for coffee lovers seeking a lighter, milky option to beat the heat."
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"
@@ -86,7 +85,7 @@
         android:paddingBottom="4dp">
 
         <Button
-            android:id="@+id/lPremiumCapp"
+            android:id="@+id/lLatte"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -100,7 +99,7 @@
             android:layout_weight="0.5" />
 
         <Button
-            android:id="@+id/mPremiumCapp"
+            android:id="@+id/mLatte"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -127,6 +126,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="4dp"
+        android:layout_marginTop="10dp"
         android:elevation="2dp">
 
         <TextView
@@ -145,7 +145,8 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter quantity"/>
+            android:hint="Enter your Quantity"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -183,7 +184,7 @@
         android:layout_marginTop="70dp"
         android:backgroundTint="#8B4513"
         android:padding="12dp"
-        android:text="Order Now  -  Rs.850"
+        android:text="Order Now  -  Rs.670"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

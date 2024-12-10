@@ -9,12 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class DescYellowCake : AppCompatActivity() {
+class DescIcedMocha : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
-        setContentView(R.layout.activity_desc_yellow_cake)
-
+        setContentView(R.layout.activity_desc_iced_mocha)
         val spinner: Spinner = findViewById(R.id.my_spinner)
 
         // Create an ArrayAdapter using the string array and a default spinner layout

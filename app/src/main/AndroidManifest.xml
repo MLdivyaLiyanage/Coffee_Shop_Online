@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,60 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Coffee_Shop_Online"
         tools:targetApi="31">
+        <activity
+            android:name=".DescWaffeles"
+            android:exported="false" />
+        <activity
+            android:name=".DescNoodles"
+            android:exported="false" />
+        <activity
+            android:name=".DescPasta"
+            android:exported="false" />
+        <activity
+            android:name=".DescBurger"
+            android:exported="false" />
+        <activity
+            android:name=".DescPizza"
+            android:exported="false" />
+        <activity
+            android:name=".DescAvocadoShake"
+            android:exported="false" />
+        <activity
+            android:name=".DescLatteShake"
+            android:exported="false" />
+        <activity
+            android:name=".DescMochaShakes"
+            android:exported="false" />
+        <activity
+            android:name=".DescBananaShake"
+            android:exported="false" />
+        <activity
+            android:name=".DescGoldenGinger"
+            android:exported="false" />
+        <activity
+            android:name=".DescStrawberrySlush"
+            android:exported="false" />
+        <activity
+            android:name=".DescMichelada"
+            android:exported="false" />
+        <activity
+            android:name=".DescSkinnyIceCocktail"
+            android:exported="false" />
+        <activity
+            android:name=".DescMazagram"
+            android:exported="false" />
+        <activity
+            android:name=".DescIcedLatte"
+            android:exported="false" />
+        <activity
+            android:name=".DescShakerato"
+            android:exported="false" />
+        <activity
+            android:name=".DescColdBrewCoffee"
+            android:exported="false" />
+        <activity
+            android:name=".DescIcedMocha"
+            android:exported="false" />
         <activity
             android:name=".DescYellowCake"
             android:exported="false" />

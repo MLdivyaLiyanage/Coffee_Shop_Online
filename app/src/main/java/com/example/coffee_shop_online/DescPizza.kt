@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class DescYellowCake : AppCompatActivity() {
+class DescPizza : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
-        setContentView(R.layout.activity_desc_yellow_cake)
+        setContentView(R.layout.activity_desc_pizza)
 
         val spinner: Spinner = findViewById(R.id.my_spinner)
 

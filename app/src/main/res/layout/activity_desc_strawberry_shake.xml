@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/discOreo"
+    android:id="@+id/discChick"
     android:background="#F5F5F5">
 
     <ImageView
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitStart"
-        android:src="@drawable/oreaoshake" />
+        android:src="@drawable/strawberry_shake" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oreo Milk Shake"
+            android:text="Yummy Strawberry Shake"
             android:textColor="@color/black"
             android:textSize="35sp"
             android:fontFamily="sans-serif-medium" />
@@ -44,17 +44,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingVertical="8dp">
-
-        <!--<TextView
-            android:id="@+id/likes"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:clickable="true"
-            android:drawableStart="@drawable/favorite"
-            android:drawablePadding="4dp"
-            android:focusable="true"
-            android:textColor="#8B4513"
-            android:textSize="16sp" />-->
+        <!--
+                <TextView
+                    android:id="@+id/likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/favorite"
+                    android:drawablePadding="4dp"
+                    android:focusable="true"
+                    android:textColor="#8B4513"
+                    android:textSize="16sp" />-->
 
         <Button
             android:id="@+id/customerReviews"
@@ -63,13 +63,13 @@
             android:layout_weight="1"
             android:text="Customer Reviews"
             android:backgroundTint="#D3D3D3"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Oreo milkshake is a creamy, indulgent beverage made by blending vanilla ice cream, milk, and crushed Oreo cookies. It offers a deliciously sweet and rich flavor, with a perfect balance of smoothness and crunchy cookie bits"
+        android:text="Yummy Strawberry Shake is a creamy blend of fresh strawberries, milk, and sweetener, creating a refreshing and indulgent treat."
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"
@@ -86,7 +86,7 @@
         android:paddingBottom="4dp">
 
         <Button
-            android:id="@+id/lPremiumCapp"
+            android:id="@+id/lSshake"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -100,7 +100,7 @@
             android:layout_weight="0.5" />
 
         <Button
-            android:id="@+id/mPremiumCapp"
+            android:id="@+id/mSshake"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -113,7 +113,7 @@
             android:layout_weight="0.5" />
 
         <Button
-            android:id="@+id/sPremiumCapp"
+            android:id="@+id/sSshake"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -127,6 +127,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="4dp"
+        android:layout_marginTop="10dp"
         android:elevation="2dp">
 
         <TextView
@@ -145,7 +146,9 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter quantity"/>
+            android:hint="Enter Quantity"
+            />
+
     </LinearLayout>
 
     <LinearLayout
@@ -180,11 +183,12 @@
         android:id="@+id/orderNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#8B4513"
         android:padding="12dp"
-        android:text="Order Now  -  Rs.850"
+        android:text="Order Now - Rs.700"
         android:textAllCaps="false"
         android:textColor="@color/white" />
+
 
 </LinearLayout>

@@ -1,19 +1,16 @@
 package com.example.coffee_shop_online
 
 import android.os.Bundle
-import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class DescYellowCake : AppCompatActivity() {
+class DescSkinnyIceCocktail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
-        setContentView(R.layout.activity_desc_yellow_cake)
+        setContentView(R.layout.activity_desc_skinny_ice_cocktail)
 
         val spinner: Spinner = findViewById(R.id.my_spinner)
 

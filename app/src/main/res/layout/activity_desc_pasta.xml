@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/discOreo"
     android:background="#F5F5F5">
 
     <ImageView
@@ -13,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitStart"
-        android:src="@drawable/oreaoshake" />
+        android:src="@drawable/pasta" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oreo Milk Shake"
+            android:text="Pasta"
             android:textColor="@color/black"
             android:textSize="35sp"
             android:fontFamily="sans-serif-medium" />
@@ -63,18 +62,18 @@
             android:layout_weight="1"
             android:text="Customer Reviews"
             android:backgroundTint="#D3D3D3"
-            android:textColor="@color/white" />
+            android:textColor="#000000" />
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Oreo milkshake is a creamy, indulgent beverage made by blending vanilla ice cream, milk, and crushed Oreo cookies. It offers a deliciously sweet and rich flavor, with a perfect balance of smoothness and crunchy cookie bits"
+        android:text="Pasta is a traditional Italian dish made from durum wheat semolina dough, typically shaped into various forms like spaghetti, penne, or fusilli. It's commonly served with a variety of sauces such as marinara, Alfredo, or pesto, and can be enjoyed hot or cold in salads."
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"
-        android:gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:lineSpacingExtra="4dp"
         android:justificationMode="inter_word"/>
 
@@ -86,7 +85,7 @@
         android:paddingBottom="4dp">
 
         <Button
-            android:id="@+id/lPremiumCapp"
+            android:id="@+id/lPasta"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -100,7 +99,7 @@
             android:layout_weight="0.5" />
 
         <Button
-            android:id="@+id/mPremiumCapp"
+            android:id="@+id/mPasta"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -113,7 +112,7 @@
             android:layout_weight="0.5" />
 
         <Button
-            android:id="@+id/sPremiumCapp"
+            android:id="@+id/sPasta"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#8B4513"
@@ -145,7 +144,8 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter quantity"/>
+            android:hint="Enter Quantity"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -183,7 +183,7 @@
         android:layout_marginTop="70dp"
         android:backgroundTint="#8B4513"
         android:padding="12dp"
-        android:text="Order Now  -  Rs.850"
+        android:text="Order Now  -  Rs.990"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 
