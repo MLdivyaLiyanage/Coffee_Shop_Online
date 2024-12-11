@@ -1,33 +1,102 @@
 package com.example.coffee_shop_online
 
+import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class DescVanilla : AppCompatActivity() {
+
+    private lateinit var lPremiumCapp: Button
+    private lateinit var mPremiumCapp: Button
+    private lateinit var sPremiumCapp: Button
+    private lateinit var quantityEdt: EditText
+    private lateinit var branchesEdt: Spinner
+    private lateinit var orderBtn: Button
+
+    private lateinit var database: DatabaseReference
+
+    private var selectedSize: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.enableEdgeToEdge()
         setContentView(R.layout.activity_decs_vanilla)
 
-        val spinner: Spinner = findViewById(R.id.my_spinner)
+        database = FirebaseDatabase.getInstance().reference
 
-        // Create an ArrayAdapter using the string array and a default spinner layout
+        lPremiumCapp = findViewById(R.id.lPremiumCapp)
+        mPremiumCapp = findViewById(R.id.mPremiumCapp)
+        sPremiumCapp = findViewById(R.id.sPremiumCapp)
+        quantityEdt = findViewById(R.id.Quantity)
+        branchesEdt = findViewById(R.id.my_spinner)
+        orderBtn = findViewById(R.id.orderNow)
+
         val adapter = ArrayAdapter.createFromResource(
             this,
-            R.array.branch_list, // This array must be defined in res/values/strings.xml
+            R.array.branch_list,
             android.R.layout.simple_spinner_item
         )
-
-        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        branchesEdt.adapter = adapter
 
-        // Apply the adapter to the spinner
-        spinner.adapter = adapter
+        lPremiumCapp.setOnClickListener { selectSize("Large", lPremiumCapp) }
+        mPremiumCapp.setOnClickListener { selectSize("Medium", mPremiumCapp) }
+        sPremiumCapp.setOnClickListener { selectSize("Small", sPremiumCapp) }
+
+        orderBtn.setOnClickListener {
+            processOrder()
+        }
     }
+
+    private fun selectSize(size: String, selectedButton: Button) {
+        selectedSize = size
+
+        resetButtonColors()
+        selectedButton.setBackgroundColor(Color.parseColor("#D2691E"))
+    }
+
+    private fun resetButtonColors() {
+        lPremiumCapp.setBackgroundColor(Color.parseColor("#8B4513"))
+        mPremiumCapp.setBackgroundColor(Color.parseColor("#8B4513"))
+        sPremiumCapp.setBackgroundColor(Color.parseColor("#8B4513"))
+    }
+
+    private fun processOrder() {
+        val quantity = quantityEdt.text.toString().trim()
+        val branch = branchesEdt.selectedItem.toString()
+
+        if (quantity.isEmpty()) {
+            Toast.makeText(this, "Please enter a quantity.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (selectedSize == null) {
+            Toast.makeText(this, "Please select a size.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val orderId = database.child("Order").push().key ?: run {
+            Toast.makeText(this, "Failed to generate order ID.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val order = Order(orderId, selectedSize!!, quantity, branch)
+
+        database.child("Order").child(orderId).setValue(order)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Failed to place the order. Please try again.", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    data class Order(val orderId: String, val size: String, val quantity: String, val branch: String)
 }
