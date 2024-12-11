@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "68222471747",
+    "project_id": "coffeeshoponline-32fc4",
+    "storage_bucket": "coffeeshoponline-32fc4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68222471747:android:0a2991db939006b8ed4ef6",
+        "android_client_info": {
+          "package_name": "com.example.coffee_shop_online"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWWdRM0aMRw-Tec51YlmOZIO-hwUeZbHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
