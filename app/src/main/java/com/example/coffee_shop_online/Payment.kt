@@ -46,24 +46,17 @@ class Payment : AppCompatActivity(){
     {
         val paymentInfo = PaymentInfo(cardNumber,holderName,cvv,ExDate)
         val dbRef = FirebaseDatabase.getInstance().getReference("PaymentInfo")
-        dbRef.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                dbRef.setValue(paymentInfo)
-                Toast.makeText(this@Payment,"Data saved Successfully", Toast.LENGTH_LONG).show()
+        dbRef.push().setValue(paymentInfo)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Data saved successfully", Toast.LENGTH_LONG).show()
+                // Clear input fields
                 cardNumberEdit.setText("")
                 holderNameEdit.setText("")
                 cvvEdit.setText("")
                 exDate.setText("")
             }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@Payment,"Fail to save data : ${error}", Toast.LENGTH_LONG).show()
-                cardNumberEdit.setText("")
-                holderNameEdit.setText("")
-                cvvEdit.setText("")
-                exDate.setText("")
+            .addOnFailureListener { error ->
+                Toast.makeText(this, "Failed to save data: ${error.message}", Toast.LENGTH_LONG).show()
             }
-
-        })
     }
 }

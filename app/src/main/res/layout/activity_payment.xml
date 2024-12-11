@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="16dp"
+    android:background="@drawable/payment"
     tools:context=".Payment">
 
 
@@ -28,7 +29,10 @@
         android:hint="Card Number"
         android:inputType="number"
         android:padding="12dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_text_background"
+        android:textColor="@color/white"
+        android:hintTextColor="#B0B0B0"/>
 
 
     <EditText
@@ -38,14 +42,17 @@
         android:hint="Card Holder Name"
         android:inputType="textPersonName"
         android:padding="12dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_text_background"
+        android:textColor="@color/white"
+        android:hintTextColor="#B0B0B0"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="24dp">
+        android:layout_marginBottom="32dp">
 
 
         <EditText
@@ -56,7 +63,10 @@
             android:hint="CVV"
             android:inputType="numberPassword"
             android:padding="12dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/white"
+            android:hintTextColor="#B0B0B0"/>
 
 
         <EditText
@@ -66,7 +76,10 @@
             android:layout_weight="1"
             android:hint="Exp Date"
             android:inputType="date"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/white"
+            android:hintTextColor="#B0B0B0"/>
     </LinearLayout>
 
 
@@ -77,7 +90,8 @@
         android:text="Pay Now"
         android:textColor="#FFFFFF"
         android:backgroundTint="#B62116"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:layout_marginTop="48dp" />
 </LinearLayout>
 
 
