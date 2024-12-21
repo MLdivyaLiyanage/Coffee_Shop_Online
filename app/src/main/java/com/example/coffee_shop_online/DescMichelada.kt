@@ -1,5 +1,6 @@
 package com.example.coffee_shop_online
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -102,6 +103,10 @@ class DescMichelada : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("orderId", orderId) // Pass orderId to the next activity if needed
+                    startActivity(intent)
+
                 } else {
                     Toast.makeText(this, "Failed to place the order. Please try again.", Toast.LENGTH_SHORT).show()
                 }
