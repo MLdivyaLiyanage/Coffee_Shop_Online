@@ -15,7 +15,7 @@
 
 
         <activity
-            android:name=".CategoryActivity"
+            android:name=".DescChocolate"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Category1"
+            android:name=".Payment"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <!--<activity
             android:name=".Category2"
             android:exported="true">
         </activity>
@@ -75,7 +75,7 @@
         <activity
             android:name=".Payment"
             android:exported="true">
-        </activity>
+        </activity>-->
 
   </application>
 
