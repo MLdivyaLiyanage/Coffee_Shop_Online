@@ -1,5 +1,6 @@
 package com.example.coffee_shop_online
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -92,7 +93,12 @@ class DescRedVelvet : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
-                } else {
+                    // Navigate to the Payment activity
+                    val intent = Intent(this, Payment::class.java)
+                    intent.putExtra("orderId", orderId) // Pass orderId to the next activity if needed
+                    startActivity(intent)
+                } else
+                {
                     Toast.makeText(this, "Failed to place the order. Please try again.", Toast.LENGTH_SHORT).show()
                 }
             }
