@@ -44,32 +44,35 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingVertical="8dp">
-        <!--
-                <TextView
-                    android:id="@+id/likes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:clickable="true"
-                    android:drawableStart="@drawable/favorite"
-                    android:drawablePadding="4dp"
-                    android:focusable="true"
-                    android:textColor="#8B4513"
-                    android:textSize="16sp" />-->
 
-        <Button
-            android:id="@+id/customerReviews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Customer Reviews"
-            android:backgroundTint="#D3D3D3"
-            android:textColor="@color/black" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/customerReviews"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Customer Reviews"
+                android:backgroundTint="#eac944"
+                android:textColor="@color/white" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"/>
+
+            <Button
+                android:id="@+id/mapButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Map"
+                android:backgroundTint="#D3D3D3"
+                android:textColor="@color/black" />
+        </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Avocado Milkshake is a creamy and smooth drink made with ripe avocado, milk, and a touch of sweetener. Rich in texture and mildly sweet, it’s a nutritious and refreshing treat, perfect for a satisfying snack or dessert."
+        android:text="Avocado Milkshake is a creamy and smooth drink made with ripe avocado, milk, and a touch of sweetener."
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"
@@ -184,7 +187,7 @@
         android:id="@+id/orderNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#8B4513"
         android:padding="12dp"
         android:text="Order Now - Rs.780"

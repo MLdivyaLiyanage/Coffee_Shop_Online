@@ -44,23 +44,26 @@
         android:orientation="horizontal"
         android:paddingVertical="8dp">
 
-        <!--<TextView
-            android:id="@+id/likes"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:clickable="true"
-            android:drawableStart="@drawable/favorite"
-            android:drawablePadding="4dp"
-            android:focusable="true"
-            android:textColor="#8B4513"
-            android:textSize="16sp" />-->
-
         <Button
             android:id="@+id/customerReviews"
-            android:layout_width="match_parent"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Customer Reviews"
+            android:backgroundTint="#eac944"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"/>
+
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Map"
             android:backgroundTint="#D3D3D3"
             android:textColor="@color/black" />
     </LinearLayout>
@@ -68,7 +71,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yellow butter cake is a classic, moist, and tender cake made with butter, eggs, sugar, flour, and milk. Its rich golden color comes from the butter and eggs, and it serves as a versatile base for a variety of frostings and fillings. Perfect for celebrations"
+        android:text="Classic, moist, and tender cake made with butter, eggs, sugar, flour, and milk. Its rich golden color comes from the butter and eggs, and it serves as a versatile base."
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"
@@ -181,7 +184,7 @@
         android:id="@+id/orderNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#8B4513"
         android:padding="12dp"
         android:text="Order Now  -  Rs.850"

@@ -20,6 +20,7 @@ class DescAvocadoShake : AppCompatActivity() {
     private lateinit var quantityEdt: EditText
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
+    private lateinit var mapButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -40,6 +41,7 @@ class DescAvocadoShake : AppCompatActivity() {
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
+        mapButton = findViewById(R.id.mapButton)
 
         // Set up the spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
@@ -58,6 +60,12 @@ class DescAvocadoShake : AppCompatActivity() {
         // Handle Order button click
         orderBtn.setOnClickListener {
             processOrder()
+        }
+
+        // Handle Map button click
+        mapButton.setOnClickListener {
+            val intent = Intent(this, BranchLocations::class.java)
+            startActivity(intent)
         }
     }
 

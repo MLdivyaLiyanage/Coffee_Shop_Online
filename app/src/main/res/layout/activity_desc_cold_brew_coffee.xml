@@ -44,32 +44,36 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingVertical="8dp">
-        <!--
-                <TextView
-                    android:id="@+id/likes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:clickable="true"
-                    android:drawableStart="@drawable/favorite"
-                    android:drawablePadding="4dp"
-                    android:focusable="true"
-                    android:textColor="#8B4513"
-                    android:textSize="16sp" />-->
 
         <Button
             android:id="@+id/customerReviews"
-            android:layout_width="match_parent"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Customer Reviews"
+            android:backgroundTint="#eac944"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"/>
+
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Map"
             android:backgroundTint="#D3D3D3"
             android:textColor="@color/black" />
     </LinearLayout>
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cold Brew Coffee is a smooth, refreshing drink made by steeping coarsely ground coffee in cold water for an extended period. Known for its rich flavor and low acidity, it's the perfect pick-me-up for coffee lovers on a hot day."
+        android:text="Cold Brew Coffee is a smooth, refreshing drink made by steeping coarsely ground coffee in cold water for an extended period. Known for its rich flavor and low acidity"
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"

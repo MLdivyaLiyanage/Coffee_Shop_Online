@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Coffee_Shop_Online"
         tools:targetApi="31">
-        <activity
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDgdVBOrO78tqPpwHx-NjlarbjY_3gPQgk" />
+
+        <!--<activity
             android:name=".DescWaffeles"
             android:exported="false" />
         <activity
@@ -82,13 +89,22 @@
             android:exported="false" />
         <activity
             android:name=".DescIcedEspresso"
-            android:exported="true" />
-        <activity
+            android:exported="true" />-->
+        <!--<activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+
+        <activity
+            android:name=".BranchLocations"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -20,6 +20,7 @@ class DescPasta : AppCompatActivity() {
     private lateinit var quantityEdt: EditText
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
+    private lateinit var mapButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -58,6 +59,10 @@ class DescPasta : AppCompatActivity() {
         // Handle Order button click
         orderBtn.setOnClickListener {
             processOrder()
+        }
+        mapButton.setOnClickListener {
+            val intent = Intent(this, BranchLocations::class.java)
+            startActivity(intent)
         }
     }
 

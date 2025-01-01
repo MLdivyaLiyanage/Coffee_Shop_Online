@@ -44,23 +44,26 @@
         android:orientation="horizontal"
         android:paddingVertical="8dp">
 
-        <!--<TextView
-            android:id="@+id/likes"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:clickable="true"
-            android:drawableStart="@drawable/favorite"
-            android:drawablePadding="4dp"
-            android:focusable="true"
-            android:textColor="#8B4513"
-            android:textSize="16sp" />-->
-
         <Button
             android:id="@+id/customerReviews"
-            android:layout_width="match_parent"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Customer Reviews"
+            android:backgroundTint="#eac944"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"/>
+
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Map"
             android:backgroundTint="#D3D3D3"
             android:textColor="@color/black" />
     </LinearLayout>
@@ -68,7 +71,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Noodles are a type of pasta made from dough, typically consisting of wheat, water, and sometimes egg. They come in various shapes and sizes and are commonly served in soups, stir-fries, or salads, often paired with sauces or vegetables."
+        android:text="Dough, typically consisting of wheat, water, and sometimes egg. They come in various shapes and sizes and are commonly served in soups, stir-fries, or salads."
         android:textColor="#757575"
         android:textSize="14sp"
         android:padding="12dp"

@@ -20,6 +20,7 @@ class DescMochaShakes : AppCompatActivity() {
     private lateinit var quantityEdt: EditText
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
+    private lateinit var mapButton: Button
 
     private lateinit var database: DatabaseReference
 
