@@ -24,42 +24,35 @@ class DescBananaShake : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
 
-    // Variable to store the selected size
     private var selectedSize: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_desc_banana_shake)
 
-        // Initialize Firebase Database reference
         database = FirebaseDatabase.getInstance().reference
 
-        // Initialize views
         lBananaShake = findViewById(R.id.lBananaShake)
         mBananaShake = findViewById(R.id.mBananaShake)
         sBananaShake = findViewById(R.id.sBananaShake)
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
+        mapButton = findViewById(R.id.mapButton)
 
-        // Set up the spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
             this,
-            R.array.branch_list, // Array defined in res/values/strings.xml
+            R.array.branch_list,
             android.R.layout.simple_spinner_item
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        // Assign click listeners for size buttons
         lBananaShake.setOnClickListener { selectSize("Large", lBananaShake) }
         mBananaShake.setOnClickListener { selectSize("Medium", mBananaShake) }
         sBananaShake.setOnClickListener { selectSize("Small", sBananaShake) }
 
-        // Handle Order button click
-        orderBtn.setOnClickListener {
-            processOrder()
-        }
+        orderBtn.setOnClickListener { processOrder() }
 
         mapButton.setOnClickListener {
             val intent = Intent(this, BranchLocations::class.java)
@@ -68,10 +61,7 @@ class DescBananaShake : AppCompatActivity() {
     }
 
     private fun selectSize(size: String, selectedButton: Button) {
-        // Store the selected size
         selectedSize = size
-
-        // Reset button colors and highlight the selected one
         resetButtonColors()
         selectedButton.setBackgroundColor(Color.parseColor("#D2691E"))
     }
@@ -86,7 +76,6 @@ class DescBananaShake : AppCompatActivity() {
         val quantity = quantityEdt.text.toString().trim()
         val branch = branchesEdt.selectedItem.toString()
 
-        // Validate inputs
         if (quantity.isEmpty()) {
             Toast.makeText(this, "Please enter a quantity.", Toast.LENGTH_SHORT).show()
             return
@@ -104,21 +93,18 @@ class DescBananaShake : AppCompatActivity() {
 
         val order = Order(orderId, selectedSize!!, quantity, branch)
 
-        // Store order in Firebase
         database.child("Order").child(orderId).setValue(order)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("orderId", orderId) // Pass orderId to the next activity if needed
+                    intent.putExtra("orderId", orderId)
                     startActivity(intent)
-
                 } else {
                     Toast.makeText(this, "Failed to place the order. Please try again.", Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
-    // Data class to represent the order
     data class Order(val orderId: String, val size: String, val quantity: String, val branch: String)
 }

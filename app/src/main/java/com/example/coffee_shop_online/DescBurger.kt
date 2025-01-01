@@ -41,6 +41,7 @@ class DescBurger : AppCompatActivity() {
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
+        mapButton = findViewById(R.id.mapButton) // Initialize mapButton
 
         // Set up the spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
@@ -61,6 +62,7 @@ class DescBurger : AppCompatActivity() {
             processOrder()
         }
 
+        // Handle Map button click
         mapButton.setOnClickListener {
             val intent = Intent(this, BranchLocations::class.java)
             startActivity(intent)
@@ -112,7 +114,6 @@ class DescBurger : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("orderId", orderId) // Pass orderId to the next activity if needed
                     startActivity(intent)
-
                 } else {
                     Toast.makeText(this, "Failed to place the order. Please try again.", Toast.LENGTH_SHORT).show()
                 }

@@ -41,6 +41,7 @@ class DescIcedLatte : AppCompatActivity() {
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
+        mapButton = findViewById(R.id.mapButton)
 
         // Set up the spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
