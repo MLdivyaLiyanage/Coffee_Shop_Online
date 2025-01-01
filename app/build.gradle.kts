@@ -54,4 +54,5 @@ dependencies {
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("com.google.android.material:material:1.11.0")
     implementation ("com.jaredrummler:material-spinner:1.3.1")
+    implementation ("com.google.firebase:firebase-storage:21.0.1")
 }
