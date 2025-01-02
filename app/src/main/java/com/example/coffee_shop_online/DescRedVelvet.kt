@@ -49,9 +49,9 @@ class DescRedVelvet : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        lPremiumCapp.setOnClickListener { selectSize("Large", lPremiumCapp) }
-        mPremiumCapp.setOnClickListener { selectSize("Medium", mPremiumCapp) }
-        sPremiumCapp.setOnClickListener { selectSize("Small", sPremiumCapp) }
+        lPremiumCapp.setOnClickListener { selectSize("Large Red Velvet", lPremiumCapp) }
+        mPremiumCapp.setOnClickListener { selectSize("Medium Red Velvet", mPremiumCapp) }
+        sPremiumCapp.setOnClickListener { selectSize("Small Red Velvet", sPremiumCapp) }
 
         orderBtn.setOnClickListener {
             processOrder()

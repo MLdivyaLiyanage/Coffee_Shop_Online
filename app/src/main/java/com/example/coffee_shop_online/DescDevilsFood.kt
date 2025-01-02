@@ -49,9 +49,9 @@ class DescDevilsFood : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        lPremiumCapp.setOnClickListener { selectSize("Large", lPremiumCapp) }
-        mPremiumCapp.setOnClickListener { selectSize("Medium", mPremiumCapp) }
-        sPremiumCapp.setOnClickListener { selectSize("Small", sPremiumCapp) }
+        lPremiumCapp.setOnClickListener { selectSize("Large Devils Foods", lPremiumCapp) }
+        mPremiumCapp.setOnClickListener { selectSize("Medium Devils Foods", mPremiumCapp) }
+        sPremiumCapp.setOnClickListener { selectSize("Small Devils Foods", sPremiumCapp) }
 
         orderBtn.setOnClickListener {
             processOrder()

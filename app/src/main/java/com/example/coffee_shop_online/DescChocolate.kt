@@ -49,9 +49,9 @@ class DescChocolate : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        lPremiumCapp.setOnClickListener { selectSize("Large", lPremiumCapp) }
-        mPremiumCapp.setOnClickListener { selectSize("Medium", mPremiumCapp) }
-        sPremiumCapp.setOnClickListener { selectSize("Small", sPremiumCapp) }
+        lPremiumCapp.setOnClickListener { selectSize("Large Chocolate Cake", lPremiumCapp) }
+        mPremiumCapp.setOnClickListener { selectSize("Medium Chocolate Cake", mPremiumCapp) }
+        sPremiumCapp.setOnClickListener { selectSize("Small Chocolate Cake", sPremiumCapp) }
 
         orderBtn.setOnClickListener {
             processOrder()

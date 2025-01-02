@@ -49,9 +49,9 @@ class DescWhite : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        lPremiumCapp.setOnClickListener { selectSize("Large", lPremiumCapp) }
-        mPremiumCapp.setOnClickListener { selectSize("Medium", mPremiumCapp) }
-        sPremiumCapp.setOnClickListener { selectSize("Small", sPremiumCapp) }
+        lPremiumCapp.setOnClickListener { selectSize("Large White Cake", lPremiumCapp) }
+        mPremiumCapp.setOnClickListener { selectSize("Medium White Cake", mPremiumCapp) }
+        sPremiumCapp.setOnClickListener { selectSize("Small White Cake", sPremiumCapp) }
 
         orderBtn.setOnClickListener {
             processOrder()
