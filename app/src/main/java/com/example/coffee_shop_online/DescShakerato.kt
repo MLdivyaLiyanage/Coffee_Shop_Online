@@ -53,9 +53,9 @@ class DescShakerato : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lShakerato.setOnClickListener { selectSize("Large", lShakerato) }
-        mShakerato.setOnClickListener { selectSize("Medium", mShakerato) }
-        sShakerato.setOnClickListener { selectSize("Small", sShakerato) }
+        lShakerato.setOnClickListener { selectSize("Large Shakerato", lShakerato) }
+        mShakerato.setOnClickListener { selectSize("Medium Shakerato", mShakerato) }
+        sShakerato.setOnClickListener { selectSize("Small Shakerato", sShakerato) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

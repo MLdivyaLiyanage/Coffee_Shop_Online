@@ -53,9 +53,9 @@ class DescIcedLatte : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lLatte.setOnClickListener { selectSize("Large", lLatte) }
-        mLatte.setOnClickListener { selectSize("Medium", mLatte) }
-        sLatte.setOnClickListener { selectSize("Small", sLatte) }
+        lLatte.setOnClickListener { selectSize("Large Iced Latte", lLatte) }
+        mLatte.setOnClickListener { selectSize("Medium Iced Latte", mLatte) }
+        sLatte.setOnClickListener { selectSize("Small Iced Latte", sLatte) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

@@ -53,9 +53,9 @@ class DescCrispyChicken : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lChicken.setOnClickListener { selectSize("Large", lChicken) }
-        mChicken.setOnClickListener { selectSize("Medium", mChicken) }
-        sChicken.setOnClickListener { selectSize("Small", sChicken) }
+        lChicken.setOnClickListener { selectSize("Large Crispy Chicken", lChicken) }
+        mChicken.setOnClickListener { selectSize("Medium Crispy Chicken", mChicken) }
+        sChicken.setOnClickListener { selectSize("Small Crispy Chicken", sChicken) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

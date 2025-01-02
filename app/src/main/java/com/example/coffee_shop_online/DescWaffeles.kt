@@ -53,9 +53,9 @@ class DescWaffeles : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lWaffeles.setOnClickListener { selectSize("Large", lWaffeles) }
-        mWaffeles.setOnClickListener { selectSize("Medium", mWaffeles) }
-        sWaffeles.setOnClickListener { selectSize("Small", sWaffeles) }
+        lWaffeles.setOnClickListener { selectSize("Large Waffeles", lWaffeles) }
+        mWaffeles.setOnClickListener { selectSize("Medium Waffeles", mWaffeles) }
+        sWaffeles.setOnClickListener { selectSize("Small Waffeles", sWaffeles) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

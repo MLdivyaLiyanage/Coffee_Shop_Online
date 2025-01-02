@@ -53,9 +53,9 @@ class DescMichelada : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lMichelada.setOnClickListener { selectSize("Large", lMichelada) }
-        mMichelada.setOnClickListener { selectSize("Medium", mMichelada) }
-        sMichelada.setOnClickListener { selectSize("Small", sMichelada) }
+        lMichelada.setOnClickListener { selectSize("Large Michelada", lMichelada) }
+        mMichelada.setOnClickListener { selectSize("Medium Michelada", mMichelada) }
+        sMichelada.setOnClickListener { selectSize("Small Michelada", sMichelada) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

@@ -53,9 +53,9 @@ class DescGoldenGinger : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lGoldenGinger.setOnClickListener { selectSize("Large", lGoldenGinger) }
-        mGoldenGinger.setOnClickListener { selectSize("Medium", mGoldenGinger) }
-        sGoldenGinger.setOnClickListener { selectSize("Small", sGoldenGinger) }
+        lGoldenGinger.setOnClickListener { selectSize("Large Golden Ginger", lGoldenGinger) }
+        mGoldenGinger.setOnClickListener { selectSize("Medium Golden Ginger", mGoldenGinger) }
+        sGoldenGinger.setOnClickListener { selectSize("Small Golden Ginger", sGoldenGinger) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

@@ -53,9 +53,9 @@ class DescPasta : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lPasta.setOnClickListener { selectSize("Large", lPasta) }
-        mPasta.setOnClickListener { selectSize("Medium", mPasta) }
-        sPasta.setOnClickListener { selectSize("Small", sPasta) }
+        lPasta.setOnClickListener { selectSize("Large Pasta", lPasta) }
+        mPasta.setOnClickListener { selectSize("Medium Pasta", mPasta) }
+        sPasta.setOnClickListener { selectSize("Small Pasta", sPasta) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

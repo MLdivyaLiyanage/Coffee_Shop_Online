@@ -53,9 +53,9 @@ class DescPizza : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lPizza.setOnClickListener { selectSize("Large", lPizza) }
-        mPizza.setOnClickListener { selectSize("Medium", mPizza) }
-        sPizza.setOnClickListener { selectSize("Small", sPizza) }
+        lPizza.setOnClickListener { selectSize("Large Pizza", lPizza) }
+        mPizza.setOnClickListener { selectSize("Medium Pizza", mPizza) }
+        sPizza.setOnClickListener { selectSize("Small Pizza", sPizza) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

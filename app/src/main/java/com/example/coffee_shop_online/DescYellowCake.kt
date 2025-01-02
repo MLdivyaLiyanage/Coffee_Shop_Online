@@ -53,9 +53,9 @@ class DescYellowCake : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lButterCake.setOnClickListener { selectSize("Large", lButterCake) }
-        mButterCake.setOnClickListener { selectSize("Medium", mButterCake) }
-        sButterCake.setOnClickListener { selectSize("Small", sButterCake) }
+        lButterCake.setOnClickListener { selectSize("Large Yellow Cake", lButterCake) }
+        mButterCake.setOnClickListener { selectSize("Medium Yellow Cake", mButterCake) }
+        sButterCake.setOnClickListener { selectSize("Small Yellow Cake", sButterCake) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

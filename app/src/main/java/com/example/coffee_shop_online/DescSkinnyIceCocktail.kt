@@ -53,9 +53,9 @@ class DescSkinnyIceCocktail : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lCocktail.setOnClickListener { selectSize("Large", lCocktail) }
-        mCocktail.setOnClickListener { selectSize("Medium", mCocktail) }
-        sCocktail.setOnClickListener { selectSize("Small", sCocktail) }
+        lCocktail.setOnClickListener { selectSize("Large Skinny Ice Cocktail", lCocktail) }
+        mCocktail.setOnClickListener { selectSize("Medium Skinny Ice Cocktail", mCocktail) }
+        sCocktail.setOnClickListener { selectSize("Small Skinny Ice Cocktail", sCocktail) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

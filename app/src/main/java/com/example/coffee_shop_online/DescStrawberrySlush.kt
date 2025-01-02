@@ -53,9 +53,9 @@ class DescStrawberrySlush : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lSslush.setOnClickListener { selectSize("Large", lSslush) }
-        mSslush.setOnClickListener { selectSize("Medium", mSslush) }
-        sSslush.setOnClickListener { selectSize("Small", sSslush) }
+        lSslush.setOnClickListener { selectSize("Large Strawberry Slush", lSslush) }
+        mSslush.setOnClickListener { selectSize("Medium Strawberry Slush", mSslush) }
+        sSslush.setOnClickListener { selectSize("Small Strawberry Slush", sSslush) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

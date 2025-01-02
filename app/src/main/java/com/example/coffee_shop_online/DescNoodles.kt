@@ -53,9 +53,9 @@ class DescNoodles : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lNoodles.setOnClickListener { selectSize("Large", lNoodles) }
-        mNoodles.setOnClickListener { selectSize("Medium", mNoodles) }
-        sNoodles.setOnClickListener { selectSize("Small", sNoodles) }
+        lNoodles.setOnClickListener { selectSize("Large Noodles", lNoodles) }
+        mNoodles.setOnClickListener { selectSize("Medium Noodles", mNoodles) }
+        sNoodles.setOnClickListener { selectSize("Small Noodles", sNoodles) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

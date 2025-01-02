@@ -53,9 +53,9 @@ class DescLatteShake : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lLatteShake.setOnClickListener { selectSize("Large", lLatteShake) }
-        mLatteShake.setOnClickListener { selectSize("Medium", mLatteShake) }
-        sLatteShake.setOnClickListener { selectSize("Small", sLatteShake) }
+        lLatteShake.setOnClickListener { selectSize("Large Latte Shake", lLatteShake) }
+        mLatteShake.setOnClickListener { selectSize("Medium Latte Shake", mLatteShake) }
+        sLatteShake.setOnClickListener { selectSize("Small Latte Shake", sLatteShake) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

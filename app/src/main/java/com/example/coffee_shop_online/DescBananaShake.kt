@@ -48,9 +48,9 @@ class DescBananaShake : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        lBananaShake.setOnClickListener { selectSize("Large", lBananaShake) }
-        mBananaShake.setOnClickListener { selectSize("Medium", mBananaShake) }
-        sBananaShake.setOnClickListener { selectSize("Small", sBananaShake) }
+        lBananaShake.setOnClickListener { selectSize("Large Banana Shake", lBananaShake) }
+        mBananaShake.setOnClickListener { selectSize("Medium Banana Shake", mBananaShake) }
+        sBananaShake.setOnClickListener { selectSize("Small Banana Shake", sBananaShake) }
 
         orderBtn.setOnClickListener { processOrder() }
 

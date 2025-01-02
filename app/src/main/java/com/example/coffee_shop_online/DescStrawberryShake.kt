@@ -53,9 +53,9 @@ class DescStrawberryShake : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lSshake.setOnClickListener { selectSize("Large", lSshake) }
-        mSshake.setOnClickListener { selectSize("Medium", mSshake) }
-        sSshake.setOnClickListener { selectSize("Small", sSshake) }
+        lSshake.setOnClickListener { selectSize("Large Strawberry Shake", lSshake) }
+        mSshake.setOnClickListener { selectSize("Medium Strawberry Shake", mSshake) }
+        sSshake.setOnClickListener { selectSize("Small Strawberry Shake", sSshake) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

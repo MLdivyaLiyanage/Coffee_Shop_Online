@@ -53,9 +53,9 @@ class DescIcedMocha : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lIcedMocha.setOnClickListener { selectSize("Large", lIcedMocha) }
-        mIcedMocha.setOnClickListener { selectSize("Medium", mIcedMocha) }
-        sIcedMocha.setOnClickListener { selectSize("Small", sIcedMocha) }
+        lIcedMocha.setOnClickListener { selectSize("Large Iced Mocha", lIcedMocha) }
+        mIcedMocha.setOnClickListener { selectSize("Medium Iced Mocha", mIcedMocha) }
+        sIcedMocha.setOnClickListener { selectSize("Small Iced Mocha", sIcedMocha) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

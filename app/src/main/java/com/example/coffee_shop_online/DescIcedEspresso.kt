@@ -53,9 +53,9 @@ class DescIcedEspresso : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lPremiumCapp.setOnClickListener { selectSize("Large", lPremiumCapp) }
-        mPremiumCapp.setOnClickListener { selectSize("Medium", mPremiumCapp) }
-        sPremiumCapp.setOnClickListener { selectSize("Small", sPremiumCapp) }
+        lPremiumCapp.setOnClickListener { selectSize("Large Iced Espresso", lPremiumCapp) }
+        mPremiumCapp.setOnClickListener { selectSize("Medium Iced Espresso", mPremiumCapp) }
+        sPremiumCapp.setOnClickListener { selectSize("Small Iced Espresso", sPremiumCapp) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

@@ -53,9 +53,9 @@ class DescBurger : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lBurger.setOnClickListener { selectSize("Large", lBurger) }
-        mBurger.setOnClickListener { selectSize("Medium", mBurger) }
-        sBurger.setOnClickListener { selectSize("Small", sBurger) }
+        lBurger.setOnClickListener { selectSize("Large Burger", lBurger) }
+        mBurger.setOnClickListener { selectSize("Medium Burger", mBurger) }
+        sBurger.setOnClickListener { selectSize("Small Burger", sBurger) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

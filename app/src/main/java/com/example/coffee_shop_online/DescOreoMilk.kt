@@ -53,9 +53,9 @@ class DescOreoMilk : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lOreoMilk.setOnClickListener { selectSize("Large", lOreoMilk) }
-        mOreoMilk.setOnClickListener { selectSize("Medium", mOreoMilk) }
-        sOreoMilk.setOnClickListener { selectSize("Small", sOreoMilk) }
+        lOreoMilk.setOnClickListener { selectSize("Large Oreo Milk", lOreoMilk) }
+        mOreoMilk.setOnClickListener { selectSize("Medium Oreo Milk", mOreoMilk) }
+        sOreoMilk.setOnClickListener { selectSize("Small Oreo Milk", sOreoMilk) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

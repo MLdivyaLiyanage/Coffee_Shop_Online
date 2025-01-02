@@ -53,9 +53,9 @@ class DescAvocadoShake : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lAvocado.setOnClickListener { selectSize("Large", lAvocado) }
-        mAvocado.setOnClickListener { selectSize("Medium", mAvocado) }
-        sAvocado.setOnClickListener { selectSize("Small", sAvocado) }
+        lAvocado.setOnClickListener { selectSize("Large Avocado Shake", lAvocado) }
+        mAvocado.setOnClickListener { selectSize("Medium Avocado Shake", mAvocado) }
+        sAvocado.setOnClickListener { selectSize("Small Avocado Shake", sAvocado) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

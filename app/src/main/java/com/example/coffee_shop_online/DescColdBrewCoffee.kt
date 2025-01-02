@@ -53,9 +53,9 @@ class DescColdBrewCoffee : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lBCoffee.setOnClickListener { selectSize("Large", lBCoffee) }
-        mBCoffee.setOnClickListener { selectSize("Medium", mBCoffee) }
-        sBCoffee.setOnClickListener { selectSize("Small", sBCoffee) }
+        lBCoffee.setOnClickListener { selectSize("Large Cold Brew Coffee", lBCoffee) }
+        mBCoffee.setOnClickListener { selectSize("Medium Cold Brew Coffee", mBCoffee) }
+        sBCoffee.setOnClickListener { selectSize("Small Cold Brew Coffee", sBCoffee) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

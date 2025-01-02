@@ -53,9 +53,9 @@ class DescMochaShakes : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lMochaShake.setOnClickListener { selectSize("Large", lMochaShake) }
-        mMochaShake.setOnClickListener { selectSize("Medium", mMochaShake) }
-        sMochaShake.setOnClickListener { selectSize("Small", sMochaShake) }
+        lMochaShake.setOnClickListener { selectSize("Large Mocha Shake", lMochaShake) }
+        mMochaShake.setOnClickListener { selectSize("Medium Mocha Shake", mMochaShake) }
+        sMochaShake.setOnClickListener { selectSize("Small Mocha Shake", sMochaShake) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {

@@ -53,9 +53,9 @@ class DescMazagram : AppCompatActivity() {
         branchesEdt.adapter = adapter
 
         // Assign click listeners for size buttons
-        lMazagram.setOnClickListener { selectSize("Large", lMazagram) }
-        mMazagram.setOnClickListener { selectSize("Medium", mMazagram) }
-        sMazagram.setOnClickListener { selectSize("Small", sMazagram) }
+        lMazagram.setOnClickListener { selectSize("Large Mazagram", lMazagram) }
+        mMazagram.setOnClickListener { selectSize("Medium Mazagram", mMazagram) }
+        sMazagram.setOnClickListener { selectSize("Small Mazagram", sMazagram) }
 
         // Handle Order button click
         orderBtn.setOnClickListener {
