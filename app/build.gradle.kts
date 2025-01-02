@@ -55,4 +55,5 @@ dependencies {
     implementation ("com.google.android.material:material:1.11.0")
     implementation ("com.jaredrummler:material-spinner:1.3.1")
     implementation ("com.google.firebase:firebase-storage:21.0.1")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 }

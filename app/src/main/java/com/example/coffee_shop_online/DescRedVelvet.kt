@@ -3,6 +3,7 @@ package com.example.coffee_shop_online
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -20,6 +21,7 @@ class DescRedVelvet : AppCompatActivity() {
     private lateinit var quantityEdt: EditText
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
+    private lateinit var mapButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -37,6 +39,7 @@ class DescRedVelvet : AppCompatActivity() {
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
+        mapButton = findViewById(R.id.mapButton)
 
         val adapter = ArrayAdapter.createFromResource(
             this,
@@ -52,6 +55,12 @@ class DescRedVelvet : AppCompatActivity() {
 
         orderBtn.setOnClickListener {
             processOrder()
+        }
+
+        mapButton.setOnClickListener {
+            Log.d("DescRedVelvet", "Map button clicked")
+            val intent = Intent(this, BranchLocation::class.java)
+            startActivity(intent)
         }
     }
 

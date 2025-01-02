@@ -3,6 +3,7 @@ package com.example.coffee_shop_online
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -20,6 +21,7 @@ class DescChocolate : AppCompatActivity() {
     private lateinit var quantityEdt: EditText
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
+    private lateinit var mapButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -37,6 +39,7 @@ class DescChocolate : AppCompatActivity() {
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
+        mapButton = findViewById(R.id.mapButton)
 
         val adapter = ArrayAdapter.createFromResource(
             this,
@@ -53,11 +56,16 @@ class DescChocolate : AppCompatActivity() {
         orderBtn.setOnClickListener {
             processOrder()
         }
+
+        mapButton.setOnClickListener {
+            Log.d("DescChocolate", "Map button clicked")
+            val intent = Intent(this, BranchLocation::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun selectSize(size: String, selectedButton: Button) {
         selectedSize = size
-
         resetButtonColors()
         selectedButton.setBackgroundColor(Color.parseColor("#D2691E"))
     }
@@ -93,12 +101,10 @@ class DescChocolate : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
-                    // Navigate to the Payment activity
                     val intent = Intent(this, Payment::class.java)
-                    intent.putExtra("orderId", orderId) // Pass orderId to the next activity if needed
+                    intent.putExtra("orderId", orderId)
                     startActivity(intent)
-                } else
-                {
+                } else {
                     Toast.makeText(this, "Failed to place the order. Please try again.", Toast.LENGTH_SHORT).show()
                 }
             }
