@@ -69,7 +69,7 @@ class DescColdBrewCoffee : AppCompatActivity() {
             startActivity(intent)
         }
 
-        mapButton.setOnClickListener {
+        reviewButton.setOnClickListener {
             val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
         }
