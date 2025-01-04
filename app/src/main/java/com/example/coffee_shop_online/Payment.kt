@@ -12,6 +12,7 @@ class Payment : AppCompatActivity() {
 
     private lateinit var cardNumberEdit: EditText
     private lateinit var holderNameEdit: EditText
+    private lateinit var amountEdit: EditText
     private lateinit var cvvEdit: EditText
     private lateinit var exDate: EditText
     private lateinit var payNowbtn: Button
@@ -24,6 +25,7 @@ class Payment : AppCompatActivity() {
 
         cardNumberEdit = findViewById(R.id.card_number)
         holderNameEdit = findViewById(R.id.cardHolder)
+        amountEdit = findViewById(R.id.amount)
         cvvEdit = findViewById(R.id.cvv)
         exDate = findViewById(R.id.exp_date)
         payNowbtn = findViewById(R.id.btn_paynow)
@@ -33,13 +35,14 @@ class Payment : AppCompatActivity() {
 
         payNowbtn.setOnClickListener {
             if (cardNumberEdit.text.toString().isEmpty() || holderNameEdit.text.toString().isEmpty() ||
-                cvvEdit.text.toString().isEmpty() || exDate.text.toString().isEmpty()
+                (amountEdit.text.toString().isEmpty()) || cvvEdit.text.toString().isEmpty() || exDate.text.toString().isEmpty()
             ) {
                 Toast.makeText(this@Payment, "Please enter all details", Toast.LENGTH_LONG).show()
             } else {
                 saveDataToFirebaseDatabase(
                     cardNumberEdit.text.toString(),
                     holderNameEdit.text.toString(),
+                    amountEdit.text.toString(),
                     cvvEdit.text.toString(),
                     exDate.text.toString()
                 )
@@ -47,13 +50,13 @@ class Payment : AppCompatActivity() {
         }
     }
 
-    private fun saveDataToFirebaseDatabase(cardNumber: String, holderName: String, cvv: String, ExDate: String) {
+    private fun saveDataToFirebaseDatabase(cardNumber: String, holderName: String, Amount: String, cvv: String, ExDate: String) {
         if (orderId == null) {
             Toast.makeText(this, "Order ID is missing. Cannot save payment.", Toast.LENGTH_LONG).show()
             return
         }
 
-        val paymentInfo = PaymentInfo(orderId!!, cardNumber, holderName, cvv, ExDate)
+        val paymentInfo = PaymentInfo(orderId!!, cardNumber, holderName, Amount, cvv, ExDate)
         val dbRef = FirebaseDatabase.getInstance().getReference("PaymentInfo")
         dbRef.push().setValue(paymentInfo)
             .addOnSuccessListener {
@@ -61,6 +64,7 @@ class Payment : AppCompatActivity() {
                 // Clear input fields
                 cardNumberEdit.setText("")
                 holderNameEdit.setText("")
+                amountEdit.setText("")
                 cvvEdit.setText("")
                 exDate.setText("")
 

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="16dp"
-    android:background="@drawable/payment"
+    android:background="@drawable/kk"
     tools:context=".Payment">
 
 
@@ -40,6 +40,16 @@
         android:layout_height="wrap_content"
         android:hint="Card Holder Name"
         android:inputType="textPersonName"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_text_background"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Amount"
         android:padding="12dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/edit_text_background"
