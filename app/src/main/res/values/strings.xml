@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Coffee_Shop_Online</string>
+
+    <string-array name="branch_list">
+        <item>Galle-Karapitiya</item>
+        <item>Galle-Bus stand</item>
+        <item>Galle-Wackwella</item>
+        <item>Galle-Magalle</item>
+        <item>Mathara</item>
+        <item>Mathara-Nupe</item>
+        <item>Mathara-Beach Road</item>
+        <item>Mathara-Kotuwegoda</item>
+    </string-array>
+</resources>
