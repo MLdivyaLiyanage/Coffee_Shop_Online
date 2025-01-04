@@ -103,7 +103,7 @@ class DescRedVelvet : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
                     // Navigate to the Payment activity
-                    val intent = Intent(this, Payment::class.java)
+                    val intent = Intent(this, CusDetailsActivity::class.java)
                     intent.putExtra("orderId", orderId) // Pass orderId to the next activity if needed
                     startActivity(intent)
                 } else

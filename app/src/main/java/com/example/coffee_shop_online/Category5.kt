@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 class Category5 : AppCompatActivity(){
 
     private val img = arrayOf(
-        R.drawable.chicken, R.drawable.pizza, R.drawable.burger,
-        R.drawable.pasta, R.drawable.noodles,R.drawable.waffeles)
+        R.drawable.chicken, R.drawable.pizzas, R.drawable.burger,
+        R.drawable.pastas, R.drawable.noodles,R.drawable.waffeles)
 
     private val texts = arrayOf("Crispy Chicken","Pizza","Burger",
         "Pasta","Noodles","Waffeles")

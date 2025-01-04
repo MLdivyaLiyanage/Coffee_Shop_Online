@@ -1,5 +1,6 @@
 package com.example.coffee_shop_online
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -62,6 +63,10 @@ class Payment : AppCompatActivity() {
                 holderNameEdit.setText("")
                 cvvEdit.setText("")
                 exDate.setText("")
+
+                val intent = Intent(this, CategoryActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             .addOnFailureListener { error ->
                 Toast.makeText(this, "Failed to save data: ${error.message}", Toast.LENGTH_LONG).show()

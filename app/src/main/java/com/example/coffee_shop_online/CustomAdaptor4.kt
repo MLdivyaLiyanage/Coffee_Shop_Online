@@ -45,7 +45,7 @@ class CustomAdaptor4(
         holder.nextArrow.setOnClickListener {
             val context: Context = holder.itemView.context
             val intent = when (position) {
-                0 -> Intent(context, CategoryActivity::class.java)  // First item
+                0 -> Intent(context, DescYellowCake::class.java)  // First item
                 1 -> Intent(context, DescRedVelvet::class.java)    // Second item
                 2 -> Intent(context, DescChocolate::class.java)    // Third item
                 3 -> Intent(context, DescVanilla::class.java)      // Fourth item

@@ -101,7 +101,7 @@ class DescChocolate : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Payment::class.java)
+                    val intent = Intent(this, CusDetailsActivity::class.java)
                     intent.putExtra("orderId", orderId)
                     startActivity(intent)
                 } else {

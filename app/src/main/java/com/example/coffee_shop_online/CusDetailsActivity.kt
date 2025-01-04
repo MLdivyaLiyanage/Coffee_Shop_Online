@@ -1,73 +1,80 @@
 package com.example.coffee_shop_online
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.database.FirebaseDatabase
 
 class CusDetailsActivity : AppCompatActivity() {
 
     private lateinit var name: EditText
     private lateinit var address: EditText
-    private lateinit var location: EditText
     private lateinit var phone: EditText
-    private lateinit var btnnext: Button
+    private lateinit var btnNext: Button
+
+    private var orderId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cusdetails)
 
-        // Initialize the views
+        // Initialize UI components
         name = findViewById(R.id.name)
         address = findViewById(R.id.address)
-        location = findViewById(R.id.location)
         phone = findViewById(R.id.phone)
-        btnnext = findViewById(R.id.btnnext)
+        btnNext = findViewById(R.id.btnnext)
 
-        // Initialize Firestore
-        val firestore = FirebaseFirestore.getInstance()
+        // Retrieve the orderId from the intent
+        orderId = intent.getStringExtra("orderId")
 
-        btnnext.setOnClickListener {
-            val nameText = name.text.toString().trim()
-            val addressText = address.text.toString().trim()
-            val locationText = location.text.toString().trim()
-            val phoneText = phone.text.toString().trim()
+        // Set up the "Next" button click listener
+        btnNext.setOnClickListener {
+            val customerName = name.text.toString().trim()
+            val customerAddress = address.text.toString().trim()
+            val customerPhone = phone.text.toString().trim()
 
-            // Validate input fields
-            if (nameText.isEmpty()) {
-                name.error = "Username Required!"
-                return@setOnClickListener
-            } else if (addressText.isEmpty()) {
-                address.error = "Address Required!"
-                return@setOnClickListener
-            } else if (locationText.isEmpty()) {
-                location.error = "Location Required!"
-                return@setOnClickListener
-            } else if (phoneText.isEmpty()) {
-                phone.error = "Phone Number Required!"
-                return@setOnClickListener
+            if (customerName.isEmpty() || customerAddress.isEmpty() || customerPhone.isEmpty()) {
+                Toast.makeText(
+                    this@CusDetailsActivity,
+                    "Please enter all details",
+                    Toast.LENGTH_LONG
+                ).show()
             } else {
-                // Create a map with customer details
-                val customer = hashMapOf(
-                    "name" to nameText,
-                    "address" to addressText,
-                    "location" to locationText,
-                    "phone" to phoneText
-                )
-
-                firestore.collection("customers")
-                    .add(customer)
-                    .addOnSuccessListener {
-                        Toast.makeText(this, "Details Saved Successfully!", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                    .addOnFailureListener { e ->
-                        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()
-                    }
-
+                saveDataToFirebaseDatabase(customerName, customerAddress, customerPhone)
             }
         }
+    }
+
+    private fun saveDataToFirebaseDatabase(name: String, address: String, phone: String) {
+        if (orderId == null) {
+            Toast.makeText(this, "Order ID is missing. Cannot save payment.", Toast.LENGTH_LONG).show()
+            return
+        }
+
+        // Create the customer info object
+        val customerInfo = CustomerInfo(orderId!!, name, address, phone)
+        val dbRef = FirebaseDatabase.getInstance().getReference("CustomerInfo")
+
+        // Save data to Firebase with orderId as the key
+        dbRef.child(orderId!!).setValue(customerInfo)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Customer data saved successfully", Toast.LENGTH_LONG).show()
+
+                // Navigate to the Payment page
+                val intent = Intent(this, Payment::class.java)
+                intent.putExtra("orderId", orderId) // Pass the orderId to the PaymentActivity
+                startActivity(intent)
+
+                // Clear input fields
+                this.name.setText("") // Explicitly clear the EditText fields
+                this.address.setText("")
+                this.phone.setText("")
+            }
+            .addOnFailureListener { error ->
+                Toast.makeText(this, "Failed to save data: ${error.message}", Toast.LENGTH_LONG).show()
+            }
     }
 }

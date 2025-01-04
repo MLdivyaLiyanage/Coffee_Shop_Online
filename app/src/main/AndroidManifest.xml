@@ -22,10 +22,10 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyATlVWS2qeq8ghCQoLbbVllIWjSGLMukyc" />
+            android:value="AIzaSyDgdVBOrO78tqPpwHx-NjlarbjY_3gPQgk" />
 
         <activity
-            android:name=".FeedbackActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,15 +33,81 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <activity
+            android:name=".DescAvocadoShake"
+            android:exported="true" />
+        <activity
+            android:name=".DescBananaShake"
+            android:exported="true" />
+        <activity
+            android:name=".DescBurger"
+            android:exported="true" />
+        <activity
+            android:name=".DescColdBrewCoffee"
+            android:exported="true" />
+        <activity
+            android:name=".DescCrispyChicken"
+            android:exported="true" />
+        <activity
+            android:name=".DescGoldenGinger"
+            android:exported="true" />
+        <activity
+            android:name=".DescIcedEspresso"
+            android:exported="true" />
+        <activity
+            android:name=".DescIcedLatte"
+            android:exported="true" />
+        <activity
+            android:name=".DescIcedMilk"
+            android:exported="true" />
+        <activity
+            android:name=".DescIcedMocha"
+            android:exported="true" />
+        <activity
+            android:name=".DescLatteShake"
+            android:exported="true" />
+        <activity
+            android:name=".DescMazagram"
+            android:exported="false" />
+        <activity
+            android:name=".DescMichelada"
+            android:exported="true" />
+        <activity
+            android:name=".DescMochaShakes"
+            android:exported="true" />
+        <activity
+            android:name=".DescNoodles"
+            android:exported="true" />
+        <activity
+            android:name=".DescOreoMilk"
+            android:exported="true" />
+        <activity
+            android:name=".DescPasta"
+            android:exported="true" />
+        <activity
+            android:name=".DescPizza"
+            android:exported="true" />
+        <activity
+            android:name=".DescShakerato"
+            android:exported="true" />
+        <activity
+            android:name=".DescSkinnyIceCocktail"
+            android:exported="true" />
+        <activity
+            android:name=".DescStrawberryShake"
+            android:exported="true" />
+        <activity
+            android:name=".DescStrawberrySlush"
+            android:exported="true" />
+        <activity
+            android:name=".DescWaffeles"
+            android:exported="true" />
+        <activity
+            android:name=".DescYellowCake"
+            android:exported="true" />
+        <activity
             android:name=".Branch"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".tableBooking"
             android:exported="true">
@@ -73,79 +139,38 @@
         <activity
             android:name=".tableBooking8"
             android:exported="true">
-        </activity>-->
-        <!--<activity
-            android:name=".DescWhite"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
+        <activity
+            android:name=".DescWhite"
+            android:exported="true"/>
         <activity
             android:name=".BranchLocation"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>-->
+            android:exported="true"/>
         <activity
             android:name=".Payment"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!--<activity
+            android:exported="true"/>
+        <activity
+            android:name=".CategoryActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".Category1"
+            android:exported="true"/>
+        <activity
             android:name=".Category2"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".Category3"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".Category4"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".Category5"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
         <activity
-            android:name=".Branch"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".DescRedVelvet"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".DescChocolate"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".DescVanilla"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".DescWhite"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".DescDevilsFood"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".Payment"
-            android:exported="true">
-        </activity>-->
-  </application>
+            android:name=".CusDetailsActivity"
+            android:exported="true"/>
+
+    </application>
 
 </manifest>
