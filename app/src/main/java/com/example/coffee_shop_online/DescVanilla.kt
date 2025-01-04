@@ -22,6 +22,7 @@ class DescVanilla : AppCompatActivity() {
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
     private lateinit var mapButton: Button
+    private lateinit var reviewButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -40,6 +41,7 @@ class DescVanilla : AppCompatActivity() {
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
         mapButton = findViewById(R.id.mapButton)
+        reviewButton = findViewById(R.id.customerReviews)
 
         val adapter = ArrayAdapter.createFromResource(
             this,
@@ -60,6 +62,12 @@ class DescVanilla : AppCompatActivity() {
         mapButton.setOnClickListener {
             Log.d("DescVanilla", "Map button clicked")
             val intent = Intent(this, BranchLocation::class.java)
+            startActivity(intent)
+        }
+
+        reviewButton.setOnClickListener {
+            Log.d("DescVanilla", "Review button clicked")
+            val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
         }
     }

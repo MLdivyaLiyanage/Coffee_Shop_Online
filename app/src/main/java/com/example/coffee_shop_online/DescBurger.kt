@@ -21,6 +21,7 @@ class DescBurger : AppCompatActivity() {
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
     private lateinit var mapButton: Button
+    private lateinit var reviewButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -41,7 +42,8 @@ class DescBurger : AppCompatActivity() {
         quantityEdt = findViewById(R.id.Quantity)
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
-        mapButton = findViewById(R.id.mapButton) // Initialize mapButton
+        mapButton = findViewById(R.id.mapButton)
+        reviewButton = findViewById(R.id.customerReviews)// Initialize mapButton
 
         // Set up the spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
@@ -65,6 +67,11 @@ class DescBurger : AppCompatActivity() {
         // Handle Map button click
         mapButton.setOnClickListener {
             val intent = Intent(this, BranchLocation::class.java)
+            startActivity(intent)
+        }
+
+        reviewButton.setOnClickListener {
+            val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
         }
     }

@@ -3,6 +3,7 @@ package com.example.coffee_shop_online
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -21,6 +22,7 @@ class DescYellowCake : AppCompatActivity() {
     private lateinit var branchesEdt: Spinner
     private lateinit var orderBtn: Button
     private lateinit var mapButton: Button
+    private lateinit var reviewButton: Button
 
     private lateinit var database: DatabaseReference
 
@@ -42,6 +44,7 @@ class DescYellowCake : AppCompatActivity() {
         branchesEdt = findViewById(R.id.my_spinner)
         orderBtn = findViewById(R.id.orderNow)
         mapButton = findViewById(R.id.mapButton)
+        reviewButton = findViewById(R.id.customerReviews)
 
         // Set up the spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
@@ -63,7 +66,14 @@ class DescYellowCake : AppCompatActivity() {
         }
 
         mapButton.setOnClickListener {
+            Log.d("DescWhite", "Map button clicked")
             val intent = Intent(this, BranchLocation::class.java)
+            startActivity(intent)
+        }
+
+        reviewButton.setOnClickListener {
+            Log.d("DescWhite", "Review button clicked")
+            val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
         }
     }

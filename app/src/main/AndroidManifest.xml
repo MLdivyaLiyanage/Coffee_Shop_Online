@@ -170,6 +170,9 @@
         <activity
             android:name=".CusDetailsActivity"
             android:exported="true"/>
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="true"/>
 
     </application>
 

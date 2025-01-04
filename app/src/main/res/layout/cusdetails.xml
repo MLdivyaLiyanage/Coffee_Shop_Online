@@ -43,16 +43,7 @@ android:background="@drawable/cusde">
     android:layout_gravity="center_horizontal"/>
 
 <!-- Location Field with Transparent Background and Rounded Corners -->
-<EditText
-    android:id="@+id/location"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Location"
-    android:inputType="text"
-    android:padding="12dp"
-    android:layout_marginBottom="16dp"
-    android:background="@drawable/rounded_edittext"
-    android:layout_gravity="center_horizontal"/>
+
 
 
 <EditText
