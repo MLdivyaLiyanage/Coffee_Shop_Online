@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(){
         //click listener on the next
         arrowIcon.setOnClickListener {
             //Go to DescActivity when click the arrow
-            val intent = Intent(this, DescIcedEspresso::class.java)
+            val intent = Intent(this, DescAvocadoShake::class.java)
             startActivity(intent)
         }
     }

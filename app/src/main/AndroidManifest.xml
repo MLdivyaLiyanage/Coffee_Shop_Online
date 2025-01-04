@@ -101,7 +101,7 @@
         </activity>-->
 
         <activity
-            android:name=".DescColdBrewCoffee"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -110,7 +110,7 @@
         </activity>
 
         <activity
-            android:name=".BranchLocations"
+            android:name=".DescAvocadoShake"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
