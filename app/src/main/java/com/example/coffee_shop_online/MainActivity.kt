@@ -12,9 +12,7 @@ class MainActivity : AppCompatActivity(){
 
         val arrowIcon: ImageView = findViewById(R.id.arrow_icon)
 
-        //click listener on the next
         arrowIcon.setOnClickListener {
-            //Go to DescActivity when click the arrow
             val intent = Intent(this, CategoryActivity::class.java)
             startActivity(intent)
         }

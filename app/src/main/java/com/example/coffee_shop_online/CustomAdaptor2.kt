@@ -43,15 +43,15 @@ class CustomAdaptor2(
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.bindValue(img[position], texts[position], price[position])
 
-        // Set the click listener dynamically based on position
+        // Add click listener dynamically based on position
         holder.nextArrow.setOnClickListener {
             val context: Context = holder.itemView.context
             val intent = when (position) {
-                0 -> Intent(context, DescIcedMilk::class.java)  // First item
-                1 -> Intent(context, DescSkinnyIceCocktail::class.java)    // Second item
-                2 -> Intent(context, DescMichelada::class.java)    // Third item
-                3 -> Intent(context, DescStrawberrySlush::class.java)      // Fourth item
-                4 -> Intent(context, DescGoldenGinger::class.java)        // Fifth item
+                0 -> Intent(context, DescIcedMilk::class.java)
+                1 -> Intent(context, DescSkinnyIceCocktail::class.java)
+                2 -> Intent(context, DescMichelada::class.java)
+                3 -> Intent(context, DescStrawberrySlush::class.java)
+                4 -> Intent(context, DescGoldenGinger::class.java)
                 else -> null
             }
             intent?.let { context.startActivity(it) }

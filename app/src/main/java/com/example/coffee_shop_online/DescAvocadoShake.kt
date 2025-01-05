@@ -25,7 +25,7 @@ class DescAvocadoShake : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
 
-    // Variable to store the selected size
+    //To store the selected size
     private var selectedSize: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,6 @@ class DescAvocadoShake : AppCompatActivity() {
         // Initialize Firebase Database reference
         database = FirebaseDatabase.getInstance().reference
 
-        // Initialize views
         lAvocado = findViewById(R.id.lAvocado)
         mAvocado = findViewById(R.id.mAvocado)
         sAvocado = findViewById(R.id.sAvocado)
@@ -45,26 +44,23 @@ class DescAvocadoShake : AppCompatActivity() {
         mapButton = findViewById(R.id.mapButton)
         reviewButton = findViewById(R.id.customerReviews)
 
-        // Set up the spinner with branch names
+        // Spinner with branch names
         val adapter = ArrayAdapter.createFromResource(
             this,
-            R.array.branch_list, // Array defined in res/values/strings.xml
+            R.array.branch_list,
             android.R.layout.simple_spinner_item
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         branchesEdt.adapter = adapter
 
-        // Assign click listeners for size buttons
         lAvocado.setOnClickListener { selectSize("Large Avocado Shake", lAvocado) }
         mAvocado.setOnClickListener { selectSize("Medium Avocado Shake", mAvocado) }
         sAvocado.setOnClickListener { selectSize("Small Avocado Shake", sAvocado) }
 
-        // Handle Order button click
         orderBtn.setOnClickListener {
             processOrder()
         }
 
-        // Handle Map button click
         mapButton.setOnClickListener {
             val intent = Intent(this, BranchLocation::class.java)
             startActivity(intent)
@@ -95,7 +91,6 @@ class DescAvocadoShake : AppCompatActivity() {
         val quantity = quantityEdt.text.toString().trim()
         val branch = branchesEdt.selectedItem.toString()
 
-        // Validate inputs
         if (quantity.isEmpty()) {
             Toast.makeText(this, "Please enter a quantity.", Toast.LENGTH_SHORT).show()
             return
@@ -128,6 +123,5 @@ class DescAvocadoShake : AppCompatActivity() {
             }
     }
 
-    // Data class to represent the order
     data class Order(val orderId: String, val size: String, val quantity: String, val branch: String)
 }

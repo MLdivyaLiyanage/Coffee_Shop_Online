@@ -21,7 +21,7 @@ class Branch : AppCompatActivity() {
         val branch7: CardView = findViewById(R.id.card_mathara_beachroad)
         val branch8: CardView = findViewById(R.id.card_mathara_kotuwegoda)
 
-        // Set the branch name in the Intent as an extra
+        // Pass the branch value to the next page
         branch1.setOnClickListener {
             val intent = Intent(this, tableBooking::class.java)
             intent.putExtra("branchName", "Galle Karapitiya")

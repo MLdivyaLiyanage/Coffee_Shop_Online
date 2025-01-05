@@ -21,16 +21,13 @@ class CusDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cusdetails)
 
-        // Initialize UI components
         name = findViewById(R.id.name)
         address = findViewById(R.id.address)
         phone = findViewById(R.id.phone)
         btnNext = findViewById(R.id.btnnext)
 
-        // Retrieve the orderId from the intent
         orderId = intent.getStringExtra("orderId")
 
-        // Set up the "Next" button click listener
         btnNext.setOnClickListener {
             val customerName = name.text.toString().trim()
             val customerAddress = address.text.toString().trim()
@@ -50,26 +47,23 @@ class CusDetailsActivity : AppCompatActivity() {
 
     private fun saveDataToFirebaseDatabase(name: String, address: String, phone: String) {
         if (orderId == null) {
-            Toast.makeText(this, "Order ID is missing. Cannot save payment.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Order ID is missing. Can not save.", Toast.LENGTH_LONG).show()
             return
         }
 
-        // Create the customer info object
         val customerInfo = CustomerInfo(orderId!!, name, address, phone)
         val dbRef = FirebaseDatabase.getInstance().getReference("CustomerInfo")
 
-        // Save data to Firebase with orderId as the key
+        // Save details to the Firebase
         dbRef.child(orderId!!).setValue(customerInfo)
             .addOnSuccessListener {
                 Toast.makeText(this, "Customer data saved successfully", Toast.LENGTH_LONG).show()
 
-                // Navigate to the Payment page
                 val intent = Intent(this, Payment::class.java)
-                intent.putExtra("orderId", orderId) // Pass the orderId to the PaymentActivity
+                intent.putExtra("orderId", orderId)
                 startActivity(intent)
 
-                // Clear input fields
-                this.name.setText("") // Explicitly clear the EditText fields
+                this.name.setText("")
                 this.address.setText("")
                 this.phone.setText("")
             }

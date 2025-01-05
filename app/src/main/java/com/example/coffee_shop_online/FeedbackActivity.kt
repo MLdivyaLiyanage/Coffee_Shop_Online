@@ -19,7 +19,7 @@ class FeedbackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback)
 
-        // Initialize Firebase database reference
+
         database = FirebaseDatabase.getInstance().reference
 
         val feedbackInput: EditText = findViewById(R.id.feedback_input)
@@ -32,7 +32,7 @@ class FeedbackActivity : AppCompatActivity() {
 
         val stars = listOf(star1, star2, star3, star4, star5)
 
-        // Handle star rating selection
+        // Star rating selection
         for (i in stars.indices) {
             stars[i].setOnClickListener {
                 selectedRating = i + 1
@@ -62,7 +62,6 @@ class FeedbackActivity : AppCompatActivity() {
     private fun saveFeedback(rating: Int, feedback: String) {
         val feedbackId = database.child("feedback").push().key ?: return
 
-        // Create the feedback data object
         val feedbackData = Feedback(rating, feedback)
 
         // Save feedback data to the Firebase database
@@ -71,10 +70,9 @@ class FeedbackActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Feedback submitted successfully!", Toast.LENGTH_SHORT).show()
 
-                    // Navigate to CategoryActivity
                     val intent = Intent(this, CategoryActivity::class.java)
                     startActivity(intent)
-                    finish() // Close the current activity
+                    finish()
                 } else {
                     Toast.makeText(this, "Failed to submit feedback. Try again!", Toast.LENGTH_SHORT).show()
                 }

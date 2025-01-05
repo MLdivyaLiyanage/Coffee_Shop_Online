@@ -30,7 +30,7 @@ class Payment : AppCompatActivity() {
         exDate = findViewById(R.id.exp_date)
         payNowbtn = findViewById(R.id.btn_paynow)
 
-        // Retrieve the orderId from the intent
+
         orderId = intent.getStringExtra("orderId")
 
         payNowbtn.setOnClickListener {
@@ -61,7 +61,7 @@ class Payment : AppCompatActivity() {
         dbRef.push().setValue(paymentInfo)
             .addOnSuccessListener {
                 Toast.makeText(this, "Payment data saved successfully", Toast.LENGTH_LONG).show()
-                // Clear input fields
+
                 cardNumberEdit.setText("")
                 holderNameEdit.setText("")
                 amountEdit.setText("")

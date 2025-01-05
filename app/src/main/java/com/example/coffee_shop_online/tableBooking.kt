@@ -39,7 +39,7 @@ class tableBooking : AppCompatActivity() {
 
         databaseRef = FirebaseDatabase.getInstance().getReference("BookingHistoryKarapitiya")
 
-        // Get the branch name passed from the Branch activity
+
         selectedBranch = intent.getStringExtra("branchName")
 
         display = findViewById(R.id.display)
@@ -56,10 +56,10 @@ class tableBooking : AppCompatActivity() {
             Pair(findViewById<Button>(R.id.button8), "Table 8")
         )
 
-        // Fetch and display the current booking status from Firebase
+        // Display the current booking status from Firebase
         fetchTableStatus()
 
-        // Set button listeners
+
         setButtonListeners(buttons)
 
         btnNext.setOnClickListener {
@@ -85,7 +85,6 @@ class tableBooking : AppCompatActivity() {
                     }
                 }
 
-                // Update button text based on booking status
                 updateTableButtons()
             }
 
@@ -129,9 +128,8 @@ class tableBooking : AppCompatActivity() {
     private fun handleTableBooking(button: Button, tableName: String) {
         val isBooked = tableStatus[tableName] ?: false
 
-        // Check if the table is already booked
+
         if (isBooked) {
-            // If the table is booked, show a message and return
             Toast.makeText(this, "$tableName is already booked", Toast.LENGTH_SHORT).show()
             return
         }
@@ -142,7 +140,6 @@ class tableBooking : AppCompatActivity() {
         val name = nameField.text.toString().trim()
         val phone = phoneField.text.toString().trim()
 
-        // Validate the input fields
         if (name.isEmpty() || phone.isEmpty()) {
             Toast.makeText(this, "Please enter your name and phone number", Toast.LENGTH_SHORT).show()
             return
@@ -156,7 +153,6 @@ class tableBooking : AppCompatActivity() {
         bookingHistory.append(message).append("\n")
         display.text = bookingHistory.toString()
 
-        // Save the booking to Firebase
         saveToDatabase(message, tableName, name, phone)
     }
 
@@ -164,7 +160,7 @@ class tableBooking : AppCompatActivity() {
         val historyId = databaseRef.push().key ?: return
         val historyData = mapOf(
             "id" to historyId,
-            "branch" to selectedBranch,  // Store selected branch name
+            "branch" to selectedBranch,
             "tableName" to tableName,
             "message" to message,
             "name" to name,  // Add name to the database
